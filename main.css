@@ -39,17 +39,32 @@ div:nth-child(10) {
   background: #61ffd9; }
 
 #top {
-  height: 45vh; }
+  display: flex;
+  height: 45vh;
+  width: calc(10vh * 10); }
   #top > div {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center; }
+    align-items: center;
+    height: 100%;
+    width: 10vh; }
 
 #bot {
-  height: 45vh; }
+  display: flex;
+  height: 45vh;
+  width: calc(10vh * 10); }
   #bot > div {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    height: 100%;
+    width: 10vh; }
+
+.small-div {
+  width: 100%;
+  background: #009e78;
+  height: 15px;
+  margin-top: 2px;
+  z-index: 10000; }
 
 /*# sourceMappingURL=main.css.map */

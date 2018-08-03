@@ -42,18 +42,33 @@ div:nth-child(10) {
 }
 
 #top {
+  display: flex;
   height: 45vh;
+  width: calc(10vh * 10);
   > div {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    height: 100%;
+    width: 10vh;
   }
 }
 #bot {
+  display: flex;
   height: 45vh;
+  width: calc(10vh * 10);
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;    
+    height: 100%;
+    width: 10vh;
   }
+}
+.small-div {
+  width: 100%;
+  background: lighten($m, 22%);
+  height: 15px;
+  margin-top: 2px;
+  z-index: 10000;
 }
