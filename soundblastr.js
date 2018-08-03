@@ -2,10 +2,15 @@ const soundblastr = {
   sounds: [],
   keycodes: [81, 87, 69, 82, 84, 89, 85, 73, 79, 80],
   init() {
+    this.getDOM();
     this.loadSounds();
-    this.htmlKeys = document.getElementsByClassName('key');
     document.addEventListener('keydown', this.keydownHandler);
     document.addEventListener('keyup', this.keyupHandler);
+  },
+  getDOM() {
+    this.htmlKeys = document.getElementsByClassName('key');
+    this.top = document.getElementById('top');
+    this.bot = document.getElementById('bot');
   },
   loadSounds() {
     for (let i=0; i<10; i++) {

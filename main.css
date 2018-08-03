@@ -35,10 +35,21 @@ div:nth-child(10) {
   -moz-user-select: none;
   user-select: none; }
 
-.top, .bot {
-  height: 45vh; }
-
 .hover {
   background: #61ffd9; }
+
+#top {
+  height: 45vh; }
+  #top > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center; }
+
+#bot {
+  height: 45vh; }
+  #bot > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 
 /*# sourceMappingURL=main.css.map */

@@ -37,9 +37,23 @@ div:nth-child(10) {
   -moz-user-select: none; 
   user-select: none; 
 }
-.top, .bot {
-  height: 45vh;
-} 
 .hover {
   background: lighten($m, 60%);
+}
+
+#top {
+  height: 45vh;
+  > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+#bot {
+  height: 45vh;
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+  }
 }
