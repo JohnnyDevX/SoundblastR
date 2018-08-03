@@ -58,7 +58,8 @@ const soundblastr = {
   keydownHandler(e) {
     let k = soundblastr.keycodes.indexOf(e.keyCode);
     if (k > -1) {
-      soundblastr.sounds[k].play()
+      soundblastr.sounds[k].currentTime = 0;
+      soundblastr.sounds[k].play();
       soundblastr.animate(k);
     } 
   },
