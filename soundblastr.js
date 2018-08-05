@@ -5,6 +5,7 @@ const soundblastr = {
     this.getDOM();
     this.loadSounds();
     this.setupAnimation();
+    this.delays = new Array(10);
     document.addEventListener('keydown', this.keydownHandler);
     document.addEventListener('keyup', this.keyupHandler);
   },
@@ -57,10 +58,12 @@ const soundblastr = {
   },
   keydownHandler(e) {
     let k = soundblastr.keycodes.indexOf(e.keyCode);
-    if (k > -1) {
+    if ((k > -1) && (soundblastr.delays[k] == false || soundblastr.delays[k] == undefined)) {
       soundblastr.sounds[k].currentTime = 0;
       soundblastr.sounds[k].play();
       soundblastr.animate(k);
+      soundblastr.delays[k] = true;
+      setTimeout(function() { soundblastr.delays[k] = false; }, 100);
     } 
   },
   keyupHandler() {
