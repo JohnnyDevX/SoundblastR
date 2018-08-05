@@ -6,9 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SoundblastR</title>
   <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Monoton|Audiowide|Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
+
+  <header>
+    <i class="fas fa-volume-up"></i>
+    <h1>SoundblastR</h1>
+    <i id="settings" class="fas fa-cog"></i>
+  </header>
+
+  <div class="info">
+    <p>click on a tile to change sound binded to it</p>
+    <p>click on the cog again when you're done</p>
+  </div>
+  
+  <div class="setting-bind">
+    <h2>Change Binded Sound</h2>
+    <div class="setting-bind-main">
+      <div class="setting-bind-main-menu">
+        <div class="div-type active">Claps</div>
+        <div class="div-type">Crashes</div>
+        <div class="div-type">Cymbals</div>
+        <div class="div-type">Kicks</div>
+        <div class="div-type">FX</div>
+        <div class="div-type">HiHats</div>
+        <div class="div-type">Kicks</div>
+        <div class="div-type">Percussions</div>
+        <div class="div-type">Shakers</div>
+        <div class="div-type">Snares</div>
+        <div class="div-type">Toms</div>
+      </div>
+      <div class="setting-bind-main-list">
+        
+      </div>
+    </div>
+  </div>
+  
   <main>
     <div id="top"></div>
     <div>
@@ -24,17 +59,9 @@
       <div class="key">P</div>
     </div>
     <div id="bot"></div>
-    <!-- 
-      to-do:
-      - refactor code,
-      - add samples settings
-      - cut samples
-      - mobile support
-      - click
-      - fix hover animation
-      - customizable delay
-    -->
+
   </main>
+
   <script src="soundblastr.js"></script>
 </body>
 </html>

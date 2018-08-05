@@ -11,15 +11,16 @@ main {
   > div:nth-child(2) {
     display: flex;
   }
+  div:nth-child(1) {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+  div:nth-child(10) {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
 }
-div:nth-child(1) {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-}
-div:nth-child(10) {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-}
+
 .key {
   background: lighten($m, 30%);
   height: 10vh;
@@ -71,4 +72,97 @@ div:nth-child(10) {
   height: 15px;
   margin-top: 2px;
   z-index: 10000;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: lighten($m, 50%);
+  font-family: Audiowide;
+  i {
+    font-size: 2em;
+    margin: 21px;
+  }
+  .fa-cog:hover {
+    cursor: pointer;
+    color: lighten($m, 80%);
+  }
+}
+
+.half-transparent {
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.info {
+  display: none;
+  font-size: 21px;
+  flex-direction: column;
+  font-family: consolas;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  top: 20%;
+  color: lighten($m, 50%);
+}
+
+.setting-bind {
+
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 2;
+
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+ 
+  background: lighten($m, 27%);
+  margin: 10vmin;
+  border-radius: 12px;
+  color: white;
+  font-family: Montserrat;
+  text-align: center;
+
+  .setting-bind-main {
+    display: flex;
+
+    .setting-bind-main-menu {
+      display: flex;
+      flex-direction: column;
+      div {
+        width: 200px;
+        font-size: 2.5vmin;
+        padding: 10px 20px;
+        &:hover {
+          background: lighten($m, 40%);
+          cursor: pointer;
+        }     
+      }
+    }
+
+    .setting-bind-main-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      div {
+        padding: 10px 20px;
+        font-size: 2.5vmin;
+        text-align: left;
+        &:hover {
+          background: lighten($m, 40%);
+          cursor: pointer;
+        }        
+      }
+    }
+
+  }
+}
+
+.active {
+  background: lighten($m, 40%);
 }
