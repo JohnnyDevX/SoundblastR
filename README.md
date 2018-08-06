@@ -11,7 +11,7 @@ Soon, more sounds will be added and you will be able to record your beats.
 - [ ] save recorded beats
 - [ ] mobile support
 - [ ] play beat on click
-- [ ] more sounds and loading screen
+- [x] more sounds and loading screen
 - [ ] sound preview when changing key binding
 - [ ] save key bindings in localStorage
 - [ ] animation divs limit

@@ -38,25 +38,28 @@ const soundblastr = {
     for (let i=0; i<this.htmlTypes.length; i++) {
       this.htmlTypes[i].addEventListener('click', this.menuTypeHandler);
     }
-    this.loadSounds('claps', 10);
+    this.loadSounds('claps', 27); 
     this.loadSounds('crashes', 7);
-    this.loadSounds('cymbals', 10);
-    this.loadSounds('fx', 10);
-    this.loadSounds('hihats', 10);
-    this.loadSounds('kicks', 10);
-    this.loadSounds('percussions', 10);
+    this.loadSounds('cymbals', 41); 
+    this.loadSounds('fx', 34);
+    this.loadSounds('hihats', 293); 
+    this.loadSounds('kicks', 503);
+    this.loadSounds('percussions', 44);
     this.loadSounds('shakers', 4);
-    this.loadSounds('snares', 4);
-    this.loadSounds('toms', 4);
+    this.loadSounds('snares', 415);
+    this.loadSounds('toms', 25); 
 
-    document.querySelector('#loader').style.display = 'none';
+    this.sounds.toms[24].addEventListener('canplay', function() {
+      document.querySelector('#loader').style.display = 'none';
+    })
+    
   },
 
   getDOM() {
     this.htmlKeys = document.getElementsByClassName('key');
     this.top = document.getElementById('top');
     this.bot = document.getElementById('bot');
-    this.htmlSettings = document.getElementById('settings');
+    this.htmlSettings = document.getElementById('settings');  
     this.info = document.querySelector('.info');
     this.settingBind = document.querySelector('.setting-bind');
     this.htmlTypes = document.querySelectorAll('.div-type');

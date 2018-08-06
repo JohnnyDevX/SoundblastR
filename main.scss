@@ -148,6 +148,7 @@ header {
       width: 100%;
       display: flex;
       flex-direction: column;
+      overflow: auto;
       div {
         padding: 10px 20px;
         font-size: 2.5vmin;
@@ -214,3 +215,6 @@ header {
     height: 26px;
   }
 }
+
+@import 'mixins';
+@include scrollbar($m);

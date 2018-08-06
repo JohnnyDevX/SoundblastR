@@ -1,0 +1,61 @@
+@mixin white-space($value) {
+  @if $value == pre-wrap {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;     
+    white-space: -o-pre-wrap;       
+  }
+}
+@mixin less($px) {
+  @media (max-width: $px) {
+    @content;
+  }
+}
+@mixin more($px) {
+  @media (min-width: $px) {
+    @content;
+  }
+}
+@mixin scrollbar($clr) {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: lighten($clr, 15%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: lighten($clr, 5%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: lighten($clr, 25%);
+  }
+}
+@mixin ahrefs($opt) {
+  @if $opt == black {
+    a:link {
+      color: #222;
+    }
+    a:visited {
+      color: #222;
+    }
+    a:hover { 
+      color: #666;
+    }
+    a:active {
+      color: #999;
+    }    
+  } @else if $opt == white {
+    a:link {
+      color: #eee;
+    }
+    a:visited {
+      color: #eee;
+    }
+    a:hover { 
+      color: #aaa;
+    }
+    a:active {
+      color: #666;
+    }    
+  }
+}
