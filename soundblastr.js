@@ -32,14 +32,12 @@ const soundblastr = {
     this.getDOM();
     this.setupAnimation();
     this.delays = new Array(10);
-    
     document.addEventListener('keydown', this.keydownHandler);
     document.addEventListener('keyup', this.keyupHandler);
     this.htmlSettings.addEventListener('click', this.settingsOpen);
     for (let i=0; i<this.htmlTypes.length; i++) {
       this.htmlTypes[i].addEventListener('click', this.menuTypeHandler);
     }
-
     this.loadSounds('claps', 10);
     this.loadSounds('crashes', 7);
     this.loadSounds('cymbals', 10);
@@ -51,7 +49,9 @@ const soundblastr = {
     this.loadSounds('snares', 4);
     this.loadSounds('toms', 4);
 
+    document.querySelector('#loader').style.display = 'none';
   },
+
   getDOM() {
     this.htmlKeys = document.getElementsByClassName('key');
     this.top = document.getElementById('top');
@@ -61,11 +61,13 @@ const soundblastr = {
     this.settingBind = document.querySelector('.setting-bind');
     this.htmlTypes = document.querySelectorAll('.div-type');
   },
+
   loadSounds(type, n) {
     for (let i=0; i<n; i++) {
       this.sounds[type][i] = new Audio(`sounds/${type}/${i}.wav`);
     }
   },  
+
   setupAnimation() {
     for (let i=0; i<10; i++) {
       let topDiv = document.createElement('div');
@@ -76,6 +78,7 @@ const soundblastr = {
       this.bot.appendChild(botDiv);
     }
   },
+
   createAnimationDiv(side, i, color) {
     let animDiv = document.createElement('div');
     animDiv.style.width = 100 - i*3 + 'px';
@@ -88,6 +91,7 @@ const soundblastr = {
     }
     return animDiv;
   },
+
   animate(k) {
     soundblastr.htmlKeys[k].classList.add('hover');    
     for (let i=0; i<32; i++) {
@@ -103,6 +107,7 @@ const soundblastr = {
     }
     setTimeout(removeAnimDivs, 1);
   },
+
   keydownHandler(e) {
     let k = soundblastr.keycodes.indexOf(e.keyCode);
     if ((k > -1) && (soundblastr.delays[k] == false || soundblastr.delays[k] == undefined)) {
@@ -114,11 +119,13 @@ const soundblastr = {
       setTimeout(function() { soundblastr.delays[k] = false; }, 100);
     } 
   },
+
   keyupHandler() {
     for (let i=0; i<10; i++) {
       soundblastr.htmlKeys[i].classList.remove('hover');
     }
   },
+
   settingsOpen() {
     for (let i=0; i<soundblastr.htmlKeys.length; i++) { 
       soundblastr.htmlKeys[i].classList.add('half-transparent');
@@ -128,6 +135,7 @@ const soundblastr = {
     soundblastr.htmlSettings.removeEventListener('click', soundblastr.settingsOpen);
     soundblastr.htmlSettings.addEventListener('click', soundblastr.settingsclose);
   },
+
   settingsclose() {
     for (let i=0; i<soundblastr.htmlKeys.length; i++) { 
       soundblastr.htmlKeys[i].classList.remove('half-transparent');
@@ -136,6 +144,7 @@ const soundblastr = {
     soundblastr.info.style.display = 'none';
     soundblastr.htmlSettings.addEventListener('click', soundblastr.settingsOpen);
   },
+
   changeBind() {
     let innerhtml = this.innerHTML;
     let keys = { 'Q': 81, 'W': 87, 'E': 69, 'R': 82, 'T': 84, 'Y': 89, 'U': 85, 'I': 73, 'O': 79, 'P': 80 };
@@ -143,7 +152,9 @@ const soundblastr = {
     soundblastr.settingBind.style.display = 'flex';
     document.querySelector('.div-type').click();
   },
+
   kBuff: null,
+
   menuTypeHandler() {
     let clicked = this.innerHTML;
     soundblastr.htmlTypes.forEach(div => {
@@ -167,6 +178,7 @@ const soundblastr = {
       i++;
     });
   },
+
   bindSound(key, type, i) {
     soundblastr.bindings[key] = {
       type: type,
@@ -174,6 +186,7 @@ const soundblastr = {
     };
     soundblastr.settingBind.style.display = 'none';
   }
+  
 }
 
 soundblastr.init();
