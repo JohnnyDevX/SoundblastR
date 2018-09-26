@@ -15,3 +15,5 @@ Soon, more sounds will be added and you will be able to record your beats.
 - [ ] sound preview when changing key binding
 - [ ] save key bindings in localStorage
 - [ ] animation divs limit
+- [ ] progress bar in loading screen with info that something is happening and to be patient because the loading is long
+- [ ] or even better, load only first 10 sounds and then load the rest in the background but let user play
